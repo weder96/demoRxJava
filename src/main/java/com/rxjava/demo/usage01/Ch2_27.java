@@ -1,0 +1,11 @@
+package com.rxjava.demo.usage01;
+
+import io.reactivex.rxjava3.core.Observable;
+
+public class Ch2_27 {
+    public static void observableFormCallable() {
+        Observable.fromCallable(() -> 1 / 0)
+                .subscribe(i -> System.out.println("Received: " + i),
+                        e -> System.out.println("Error captured: " + e));
+    }
+}
